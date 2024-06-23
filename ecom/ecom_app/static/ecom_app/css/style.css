@@ -1,0 +1,24 @@
+.goodnessseccont img{
+    width: 100%;
+}
+
+.buttermilk{
+    background-color: #20c852;
+    background-image: linear-gradient(#fff7ef);
+    padding: 50px 40px;
+    border: 1px solid #efe8e1;
+}
+
+.bg_curd{
+    background-color: #7d24a7;
+    background-image: linear-gradient(#fff7ef);
+    padding: 50px 40px;
+    border: 1px solid #efe8e1;
+}
+
+.bg_kulfi{
+    background-color: #c33a3a;
+    background-image: linear-gradient(#fff7ef);
+    padding: 50px 40px;
+    border: 1px solid #efe8e1;
+}
