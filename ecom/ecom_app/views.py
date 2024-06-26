@@ -9,5 +9,5 @@ def home(request):
     return render(request, "ecom_app/home.html")
 
 class CategoryView(View):
-    def get(self, request):
-        return render(request, "ecom_app/category.html")
+    def get(self, request, val):
+        return render(request, "ecom_app/category.html", locals())
