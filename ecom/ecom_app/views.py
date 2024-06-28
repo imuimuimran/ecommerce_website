@@ -1,7 +1,6 @@
 from django.shortcuts import render
-from urllib import request
 from django.views import View
-from django.http import HttpResponse
+from . models import products
 
 # Create your views here.
 
@@ -10,4 +9,5 @@ def home(request):
 
 class CategoryView(View):
     def get(self, request, val):
+        product = products.objects.filter(category=val)
         return render(request, "ecom_app/category.html", locals())
