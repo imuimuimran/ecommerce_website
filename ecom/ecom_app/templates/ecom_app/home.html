@@ -42,7 +42,7 @@
     <div class="row container">
       <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s animation-name: none;">
         <div class="goodnesssec buttermilk bg_ghee bg-info">
-          <a href="#">
+          <a href="{% url 'category' 'GH' %}">
             <div class="goodnessseccont text-center">
               <img src="{% static 'ecom_app/images/product/buffalo-ghee.png' %}" class="img-responsive center-block" width="250px" height="200px" alt="">
               <p class="mlkpro">Ghee</p>
@@ -53,7 +53,7 @@
 
       <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s animation-name: none;">
         <div class="goodnesssec buttermilk bg_curd bg-info">
-          <a href="#">
+          <a href="{% url 'category' 'CR' %}">
             <div class="goodnessseccont text-center">
               <img src="{% static 'ecom_app/images/product/curd-total.png' %}" class="img-responsive center-block" width="250px" height="200px" alt="">
               <p class="mlkpro">Curd</p>
@@ -64,7 +64,7 @@
 
       <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s animation-name: none;">
         <div class="goodnesssec buttermilk bg_kulfi bg-info">
-          <a href="#">
+          <a href="{% url 'category' 'IC' %}">
             <div class="goodnessseccont text-center">
               <img src="{% static 'ecom_app/images/product/kulfi.png' %}" class="img-responsive center-block" width="250px" height="200px" alt="">
               <p class="mlkpro">Kulfi</p>
@@ -72,11 +72,14 @@
           </a>
         </div>
       </div>
+    </div> 
       <br><br>
-      <div class="row container">
+
+
+    <div class="row container">
         <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s animation-name: none;">
           <div class="goodnesssec buttermilk bg_ghee bg-info">
-            <a href="#">
+            <a href="{% url 'category' 'MS' %}">
               <div class="goodnessseccont text-center">
                 <img src="{% static 'ecom_app/images/product/milk-shake-chocolate.png' %}" class="img-responsive center-block" width="250px" height="200px" alt="">
                 <p class="mlkpro">Milk Shake</p>
@@ -87,7 +90,7 @@
 
         <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s animation-name: none;">
           <div class="goodnesssec buttermilk bg_curd bg-info">
-            <a href="#">
+            <a href="{% url 'category' 'ML' %}">
               <div class="goodnessseccont text-center">
                 <img src="{% static 'ecom_app/images/product/cow-milk.png' %}" class="img-responsive center-block" width="250px" height="200px" alt="">
                 <p class="mlkpro">Milk</p>
@@ -98,7 +101,7 @@
 
         <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s animation-name: none;">
           <div class="goodnesssec buttermilk bg_kulfi bg-info">
-            <a href="#">
+            <a href="{% url 'category' 'IC' %}">
               <div class="goodnessseccont text-center">
                 <img src="{% static 'ecom_app/images/product/icbars.png' %}" class="img-responsive center-block" width="250px" height="200px" alt="">
                 <p class="mlkpro">Icebar</p>
@@ -108,6 +111,48 @@
         </div>
 
     </div>
+
+
+    <br><br>
+
+    <div class="row container">
+      <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s animation-name: none;">
+        <div class="goodnesssec buttermilk bg_ghee bg-info">
+          <a href="{% url 'category' 'Ls' %}">
+            <div class="goodnessseccont text-center">
+              <img src="{% static 'ecom_app/images/product/sweet-lassi.png' %}" class="img-responsive center-block" width="250px" height="200px" alt="">
+              <p class="mlkpro">Sweet Lassi</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s animation-name: none;">
+        <div class="goodnesssec buttermilk bg_curd bg-info">
+          <a href="{% url 'category' 'PN' %}">
+            <div class="goodnessseccont text-center">
+              <img src="{% static 'ecom_app/images/product/paneer-fresh.png' %}" class="img-responsive center-block" width="250px" height="200px" alt="">
+              <p class="mlkpro">Paneer</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-4 mi-go wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" style="animation-duration: 1s; animation-delay: 0.6s animation-name: none;">
+        <div class="goodnesssec buttermilk bg_kulfi bg-info">
+          <a href="{% url 'category' 'CZ' %}">
+            <div class="goodnessseccont text-center">
+              <img src="{% static 'ecom_app/images/product/processedcheeseslice.png' %}" class="img-responsive center-block" width="250px" height="200px" alt="">
+              <p class="mlkpro">Cheese</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+  </div>
+
+
+    
   </div>
     <br><br><br>
 {% endblock main-content %}
