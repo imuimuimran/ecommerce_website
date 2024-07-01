@@ -14,6 +14,12 @@ class CategoryView(View):
         title = products.objects.filter(category=val).values('title').annotate(total=Count('title'))
         return render(request, "ecom_app/category.html", locals())
     
+class CategoryTitle(View):
+    def get(self, request, val):
+        product = products.objects.filter(title=val)
+        title = products.objects.filter(category=product[0].category).values('title')
+        return render(request, "ecom_app/category.html", locals())
+    
 class ProductDetail(View):
     def get(self, request, pk):
         product = products.objects.get(pk=pk)
