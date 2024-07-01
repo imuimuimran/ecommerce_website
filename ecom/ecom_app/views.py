@@ -16,5 +16,6 @@ class CategoryView(View):
     
 class ProductDetail(View):
     def get(self, request, pk):
+        product = products.objects.get(pk=pk)
         return render(request, "ecom_app/product_detail.html", locals())
         

@@ -5,7 +5,7 @@ from django.db import models
 CATEGORY_CHOICES = (
     ('CR', 'Crud'),
     ('ML', 'Milk'),
-    ('LS', 'Lassi'),
+    ('Ls', 'Lassi'),
     ('MS', 'Milkshake'),
     ('PN', 'Paneer'),
     ('GH', 'Ghee'),
