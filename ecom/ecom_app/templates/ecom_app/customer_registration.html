@@ -6,7 +6,30 @@
 
 
 {% block main-content %}
-    <h1 class="text-center">This is Customer Registration Form</h1>
-    {{form}}
+    <div class="container">
+        <div class="row my-3">
+            <div class="col-sm-6 offset-sm-3">
+                <h3 class="text-center">Customer Registration form</h3>
+                <hr>
+                <form action="" method="post" novalidate class="shadow p-5">
+                    {% csrf_token %}
+                    {% for fm in form %}
+                        {{fm.label_tag}} {{fm}}
+                        <small class="text-danger">
+                            {{fm.error|striptags}}
+                        </small>
+                        <br> 
+                    {% endfor %}
+                    <input type="submit" value="Submit" class="btn btn-primary">
+                    <br>
+                    <div class="text-center text-primary fw-bold">
+                        <small>
+                            Existing User ? <a href="#" class="text-danger">Login Now</a>
+                        </small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <br><br>
 {% endblock main-content %}
