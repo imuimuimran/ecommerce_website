@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import View
 from . models import products
 from django.db.models import Count
+from . forms import CustomerRegistrationForm
 
 # Create your views here.
 
@@ -30,4 +31,9 @@ class ProductDetail(View):
     def get(self, request, pk):
         product = products.objects.get(pk=pk)
         return render(request, "ecom_app/product_detail.html", locals())
+    
+class CustomerRegistrationView(View):
+    def get(self, request):
+        form = CustomerRegistrationForm()
+        return render(request, "ecom_app/customer_registration.html", locals())
         
