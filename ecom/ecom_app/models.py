@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 
@@ -13,6 +14,18 @@ CATEGORY_CHOICES = (
     ('IC', 'Ice-Creams'),
 )
 
+DIVI_CHOICES = (
+    ('DHK', 'Dhaka'),
+    ('CTG', 'Chitagong'),
+    ('SLT', 'Sylhet'),
+    ('KHL', 'Khulna'),
+    ('RAN', 'Rangpur'),
+    ('RAJ', 'Rajshahi'),
+    ('BRS', 'Barishal'),
+    ('MYN', 'Mymanshing'),
+)
+
+
 class products(models.Model):
     title = models.CharField(max_length=100)
     selling_price = models.FloatField()
@@ -25,4 +38,16 @@ class products(models.Model):
     
     def __str__(self):
         return self.title
+    
+
+class Customer(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    locality = models.CharField(max_length=200)
+    city = models.CharField(max_length=60)
+    mobile = models.IntegerField(default=0)
+    zipcode = models.IntegerField()
+    division = models.CharField(choices=DIVI_CHOICES, max_length=100)
+    def __str__(self):
+        return self.name
     
