@@ -72,3 +72,9 @@ class ProfileView(View):
             messages.warning(request, "Invalid input data")
             
         return render(request, "ecom_app/profile.html", locals())
+    
+
+def address(request):
+    add = Customer.objects.filter(user=request.user)
+    return render(request, "ecom_app/address.html", locals())
+    
