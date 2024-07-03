@@ -31,7 +31,8 @@
                                     <p>Division : {{ad.division}}</p>
                                     <p>PostCode : {{ad.zipcode}}</p>
 
-                                    
+                                    <p class="text-center"><a href="{% url "update_address" pk=ad.id %}" type="button" class="btn btn-success">Update</a></p>
+
                                 </div>
                             </div>
                         </div>
