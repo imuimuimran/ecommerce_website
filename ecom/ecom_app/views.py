@@ -80,7 +80,8 @@ def address(request):
 
 class UpdateAddress(View):
     def get(self, request, pk):
-        form = CustomerProfileForm()
+        add = Customer.objects.get(pk=pk)
+        form = CustomerProfileForm(instance=add)
         return render(request, "ecom_app/update_address.html", locals())
         
     def post(self, request, pk):
