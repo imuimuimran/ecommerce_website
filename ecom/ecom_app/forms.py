@@ -17,6 +17,11 @@ class CustomerRegistrationForm(UserCreationForm):
         model = User
         fields = ['username', 'email', 'password1', 'password2']
         
+class MyPasswordChangeForm(PasswordChangeForm):
+    old_password = forms.CharField(label='old password', widget=forms.PasswordInput(attrs={'autofocus ': 'True', 'autocomplete ': 'current-password', 'class ': 'form-control'}))
+    new_password1 = forms.CharField(label='new password', widget=forms.PasswordInput(attrs={'autocomplete ': 'current-password', 'class ': 'form-control'}))
+    new_password2 = forms.CharField(label='confirm password', widget=forms.PasswordInput(attrs={'autocomplete ': 'current-password', 'class ': 'form-control'}))
+
 class MyPasswordResetForm(PasswordChangeForm):
     pass
 
