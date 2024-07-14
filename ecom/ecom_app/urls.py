@@ -14,7 +14,11 @@ urlpatterns = [
     path("product-detail/<int:pk>", views.ProductDetail.as_view(), name="product-detail"),
     path("profile/", views.ProfileView.as_view(), name="profile"),
     path("address/", views.address, name="address"),
-    path("update_address/<int:pk>", views.UpdateAddress.as_view(), name="update_address"),    
+    path("update_address/<int:pk>", views.UpdateAddress.as_view(), name="update_address"),
+    
+    path("add-to-cart/", views.add_to_cart, name="add-to-cart"),
+    path("cart/", views.show_cart, name="showcart"),
+        
     #login authentication
     path("registration/", views.CustomerRegistrationView.as_view(), name="customerregistration"),
     path("accounts/login", auth_view.LoginView.as_view(template_name="ecom_app/login.html", authentication_form=LoginForm), name="login"),
