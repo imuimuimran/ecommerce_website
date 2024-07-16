@@ -106,4 +106,9 @@ def add_to_cart(request):
     product = product.objects.get(id=product_id)
     Cart(user=user, product=product).save()
     return redirect("/cart")
+
+def show_cart(request):
+    user = request.user
+    cart = Cart.objects.filter(user=user)
+    return render(request, "ecom_app/addtocart.html", locals())
     
