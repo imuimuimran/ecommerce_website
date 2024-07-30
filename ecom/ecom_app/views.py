@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from . models import products, Cart
+from . models import Product, Cart
 from django.db.models import Count
 from . forms import CustomerRegistrationForm, CustomerProfileForm, Customer
 from django.contrib import messages
@@ -18,20 +18,20 @@ def contact(request):
 
 class CategoryView(View):
     def get(self, request, val):
-        product = products.objects.filter(category=val)
-        title = products.objects.filter(category=val).values('title').annotate(total=Count('title'))
+        product = Product.objects.filter(category=val)
+        title = Product.objects.filter(category=val).values('title').annotate(total=Count('title'))
         return render(request, "ecom_app/category.html", locals())
     
 class CategoryTitle(View):
     def get(self, request, val):
-        product = products.objects.filter(title=val)
-        title = products.objects.filter(category=product[0].category).values('title')
+        product = Product.objects.filter(title=val)
+        title = Product.objects.filter(category=product[0].category).values('title')
         return render(request, "ecom_app/category.html", locals())
     
 class ProductDetail(View):
     def get(self, request, pk):
-        product = products.objects.get(pk=pk)
-        return render(request, "ecom_app/product_detail.html", locals())
+        product = Product.objects.get(pk=pk)
+        return render(request, "ecom_app/product_detail.html", {'product': product})
     
 class CustomerRegistrationView(View):
     def get(self, request):
@@ -103,12 +103,17 @@ class UpdateAddress(View):
 def add_to_cart(request):
     user = request.user
     product_id = request.GET.get('prod_id')
-    product = product.objects.get(id=product_id)
+    product = Product.objects.get(id=product_id)
     Cart(user=user, product=product).save()
     return redirect("/cart")
 
 def show_cart(request):
     user = request.user
     cart = Cart.objects.filter(user=user)
+    amount = 0
+    for p in cart:
+        value = p.quantity * p.product.discounted_price
+        amount = amount + value
+    totalamount = amount + 50
     return render(request, "ecom_app/addtocart.html", locals())
     

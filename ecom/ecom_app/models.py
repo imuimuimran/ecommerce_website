@@ -26,7 +26,7 @@ DIVI_CHOICES = (
 )
 
 
-class products(models.Model):
+class Product(models.Model):
     title = models.CharField(max_length=100)
     selling_price = models.FloatField()
     discounted_price = models.FloatField()
@@ -54,10 +54,10 @@ class Customer(models.Model):
     
 class Cart(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    products = models.ForeignKey(products, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, default=1)
     quantity = models.PositiveIntegerField(default=1)
     
     @property
     def total_cost(self):
-        return self.quantity * self.products.discounted_price
+        return self.quantity * self.product.discounted_price
     
