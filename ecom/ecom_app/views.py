@@ -118,6 +118,9 @@ def show_cart(request):
     totalamount = amount + 50
     return render(request, "ecom_app/addtocart.html", locals())
 
+class checkout(View):
+    def get(self, request):
+        return render(request, "ecom_app/checkout.html", locals())
 
 def plus_cart(request):
     if request.method == "GET":
